@@ -1,5 +1,5 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS/*, AsyncRoute*/} from 'angular2/router';
 // import {HTTP_BINDINGS} from 'http/http';
 
 import {Home} from './components/home/home';
@@ -9,6 +9,14 @@ import {componentProxyFactory} from './component_proxy';
 @Component({
   selector: 'app',
 })
+// @RouteConfig([
+//   { path: '/', component: Home, as: 'home' },
+//   new AsyncRoute({
+//     path: '/about',
+//     loader: () => System.import('./components/about/about').then(m => m.About),
+//     as: 'about'
+//   })
+// ])
 @RouteConfig([
   { path: '/', component: Home, as: 'home' },
   {
